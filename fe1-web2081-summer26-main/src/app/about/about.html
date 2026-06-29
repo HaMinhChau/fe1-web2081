@@ -1,0 +1,19 @@
+<div class="text-left">
+  <p class="font-medium mb-4">Đây là trang giới thiệu</p>
+
+  <div class="grid grid-cols-2 gap-3 mb-5">
+    <div class="bg-gray-50 rounded-lg p-3">
+      <p class="text-xs text-gray-400 mb-1">Tên</p>
+      <p class="font-medium">{{name}}</p>
+    </div>
+    <div class="bg-gray-50 rounded-lg p-3">
+      <p class="text-xs text-gray-400 mb-1">Tuổi</p>
+      <p class="font-medium">{{age}}</p>
+    </div>
+  </div>
+
+  <button (click)="handleClick()"
+          class="bg-blue-600 text-white text-sm font-medium px-5 py-2 rounded hover:bg-blue-700">
+    Click Me
+  </button>
+</div>
