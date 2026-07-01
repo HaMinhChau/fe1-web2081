@@ -1,8 +1,6 @@
 <nav class="bg-blue-600 text-white shadow">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="#" class="text-xl font-semibold">
-      <strong>WEB2081 App</strong>
-    </a>
+    <a href="#" class="text-lg font-medium">WEB2081 App</a>
 
     <div class="hidden md:flex items-center space-x-8">
       <a [routerLink]="['/home']">Home</a>
@@ -11,14 +9,16 @@
       <a routerLink="/contact" class="hover:text-gray-200 text-sm">Contact</a>
     </div>
 
-    <div class="hidden md:flex items-center space-x-6">
-      <a href="#" class="hover:text-gray-200">Đăng nhập</a>
-      <a href="#" class="hover:text-gray-200">Đăng ký</a>
+    <div class="hidden md:flex items-center space-x-3">
+      <a href="#" class="border border-white/40 hover:bg-white/10 text-sm px-4 py-1.5 rounded">Đăng nhập</a>
+      <a href="#" class="bg-white text-blue-600 font-medium text-sm px-4 py-1.5 rounded">Đăng ký</a>
     </div>
   </div>
 </nav>
 
-<div class="max-w-6xl mx-auto mt-10 px-4 text-center">
-  <h1 class="text-4xl font-bold mb-4">Chào mừng đến với WEB2081</h1>
+<div class="max-w-2xl mx-auto mt-10 px-4 text-center">
+  <h1 class="text-2xl font-medium mb-2">Xin chào Angular</h1>
+  <p class="text-gray-500 mb-6">Tôi đang học Angular Framework</p>
+  <hr class="my-8 border-gray-200">
   <router-outlet></router-outlet>
 </div>
