@@ -3,10 +3,12 @@
     <a href="#" class="text-lg font-medium">WEB2081 App</a>
 
     <div class="hidden md:flex items-center space-x-8">
-      <a [routerLink]="['/home']">Home</a>
-      <a [routerLink]="['/products']">Products</a>
+      <a routerLink="/home" routerLinkActive="text-yellow-300 font-semibold">Home</a>
+      <a routerLink="/products" routerLinkActive="text-yellow-300 font-semibold">Products</a>
       <a routerLink="/about" routerLinkActive="text-yellow-300 font-semibold">About</a>
-      <a routerLink="/contact" class="hover:text-gray-200 text-sm">Contact</a>
+      <a routerLink="/contact" routerLinkActive="text-yellow-300 font-semibold">Contact</a>
+      <a routerLink="/stories" routerLinkActive="text-yellow-300 font-semibold">Stories</a>
+      
     </div>
 
     <div class="hidden md:flex items-center space-x-3">
@@ -20,5 +22,7 @@
   <h1 class="text-2xl font-medium mb-2">Xin chào Angular</h1>
   <p class="text-gray-500 mb-6">Tôi đang học Angular Framework</p>
   <hr class="my-8 border-gray-200">
-  <router-outlet></router-outlet>
+
 </div>
+<hr class="my-8">
+<router-outlet></router-outlet>

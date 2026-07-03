@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './products.css',
 })
 export class Products {
-  "name" = "Laptop, Phone, Taplet"
+  products = ['Laptop', 'Phone', 'Tablet'];
 }

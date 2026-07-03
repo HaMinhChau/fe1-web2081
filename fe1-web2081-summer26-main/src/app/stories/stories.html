@@ -1,0 +1,42 @@
+<div class="dashboard-container">
+  <h2 class="dashboard-title">Danh sách truyện tranh</h2>
+
+  <div class="table-wrapper">
+    <table class="anime-table">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Hình ảnh</th>
+          <th>Tên truyện</th>
+          <th>Sản Xuất</th>
+          <th>Tác giả</th>
+          <th>Thể loại</th>
+          <th>Lượt xem</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        @for (story of stories; track story.title; let i = $index) {
+          <tr>
+            <td class="col-stt">{{ i + 1 }}</td>
+            <td class="col-img">
+              <div class="img-container">
+                <img [src]="story.imageUrl" [alt]="story.title" />
+              </div>
+            </td>
+            <td class="col-title">
+              <span class="story-name">{{ story.title }}</span>
+              @if (story.views >= 900000) {
+                <span class="badge-hot">🔥 TRUYỆN NỔI BẬT</span>
+              }
+            </td>
+            <td class="col-data">{{ story.since }}</td>
+            <td class="col-data">{{ story.author }}</td>
+            <td><span class="badge-category">{{ story.category }}</span></td>
+            <td><span class="btn-views">Lượt xem</span></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
