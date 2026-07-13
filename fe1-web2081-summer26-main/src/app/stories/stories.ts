@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-stories',
   standalone: true, 
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './stories.html',
   styleUrl: './stories.css',
 })
@@ -14,7 +15,7 @@ export class Stories {
       title: "Dragon Ball",
       since: "1980",
       author: "Tin",
-      category: "Thi la hét",
+      price: "50000",
       views: 100000,
       imageUrl: "https://static1.srcdn.com/wordpress/wp-content/uploads/2022/03/Attack-On-Titan-Characters.jpg"
     },
@@ -22,7 +23,7 @@ export class Stories {
       title: "Attack On Titan",
       since: "2010",
       author: "Bảo",
-      category: "Cắt đầu",
+      price: "50000",
       views: 900000,
       imageUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRBJQEw7i9GWRWgW9YTyJqot8WLJfFMoPBsmg3dIVNoVXMAnqDtqkBsZG9gVgOc"
     },
@@ -30,7 +31,7 @@ export class Stories {
       title: "Bleach",
       since: "1990",
       author: "Băng",
-      category: "Thần chết",
+      price: "5000",
       views: 400000,
       imageUrl: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRbprTrqQv2sq_mSBcxrX8B4TsM682Vrd4UGKJYWqBbmcohhPGrSvAnWlV8cVFy"
     }

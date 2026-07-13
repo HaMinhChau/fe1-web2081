@@ -1,0 +1,61 @@
+<div class="dashboard-container">
+  <h2 class="dashboard-title">Đăng ký tài khoản mới</h2>
+
+  <div class="form-wrapper">
+    <form class="story-form" [formGroup]="addForm" (ngSubmit)="submitForm()">
+
+      <div class="form-group">
+        <label>username</label>
+        <input
+          type="text"
+          formControlName="username"
+          placeholder="Nhập username..."
+        />
+        @if (username?.invalid && username?.touched) {
+
+        <p style="color:red">Phải nhập tên</p>
+
+        }
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="text"
+          formControlName="email"
+          placeholder="Hãy nhập email..."
+        />
+        @if (email?.invalid && email?.touched) {
+
+        <p style="color:red">Phải nhập email</p>
+
+        }
+      </div>
+
+      <div class="form-group">
+        <label>password</label>
+        <input
+          type="number"
+          formControlName="password"
+          placeholder="Hãy nhập mật khẩu..."
+        />
+        @if (password?.invalid && password?.touched) {
+
+        <p style="color:red">Mật khẩu phải từ 6 kí tự</p>
+
+        }
+      </div>
+
+      <div class="button-group">
+        <button class="btn-save" type="submit" [disabled]="addForm.invalid" >
+          Tạo tài khoản
+        </button>
+
+        <button class="btn-reset" type="reset">
+          Làm mới
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>   

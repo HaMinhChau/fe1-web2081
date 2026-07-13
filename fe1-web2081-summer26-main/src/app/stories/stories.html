@@ -1,6 +1,11 @@
 <div class="dashboard-container">
-  <h2 class="dashboard-title">Danh sách truyện tranh</h2>
 
+  <div class="header-action">
+    <h2 class="dashboard-title">Danh sách truyện tranh</h2>
+    <div>
+      <button routerLink="/add-story" routerLinkActive="text-yellow-300 font-semibold">Thêm sản phẩm</button>
+    </div>
+  </div>
   <div class="table-wrapper">
     <table class="anime-table">
       <thead>
@@ -10,11 +15,11 @@
           <th>Tên truyện</th>
           <th>Sản Xuất</th>
           <th>Tác giả</th>
-          <th>Thể loại</th>
+          <th>Giá</th>
           <th>Lượt xem</th>
         </tr>
       </thead>
-      
+
       <tbody>
         @for (story of stories; track story.title; let i = $index) {
           <tr>
@@ -26,17 +31,24 @@
             </td>
             <td class="col-title">
               <span class="story-name">{{ story.title }}</span>
+
               @if (story.views >= 900000) {
                 <span class="badge-hot">🔥 TRUYỆN NỔI BẬT</span>
               }
             </td>
+
             <td class="col-data">{{ story.since }}</td>
             <td class="col-data">{{ story.author }}</td>
-            <td><span class="badge-category">{{ story.category }}</span></td>
-            <td><span class="btn-views">Lượt xem</span></td>
+            <td>
+              <span class="badge-category">{{ story.price }}</span>
+            </td>
+            <td>
+              <span class="btn-views">Lượt xem</span>
+            </td>
           </tr>
         }
       </tbody>
     </table>
   </div>
+
 </div>

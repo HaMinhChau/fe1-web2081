@@ -1,0 +1,83 @@
+<div class="dashboard-container">
+  <h2 class="dashboard-title">Thêm truyện tranh</h2>
+
+  <div class="form-wrapper">
+    <form class="story-form" [formGroup]="addForm" (ngSubmit)="submitForm()">
+
+      <div class="form-group">
+        <label>Tên truyện</label>
+        <input
+          type="text"
+          formControlName="title"
+          placeholder="Nhập tên truyện..."
+        />
+        @if (title?.invalid && title?.touched) {
+
+        <p style="color:red">Tên truyện phải ít nhất 3 ký tự</p>
+
+        }
+      </div>
+
+      <div class="form-group">
+        <label>Ảnh truyện</label>
+        <input
+          type="text"
+          formControlName="imageUrl"
+          placeholder="Nhập URL hình ảnh..."
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Năm sản xuất</label>
+        <input
+          type="number"
+          formControlName="since"
+          placeholder="VD: 2024"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Tác giả</label>
+        <input
+          type="text"
+          formControlName="author"
+          placeholder="Nhập tên tác giả..."
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Giá</label>
+        <input
+          type="number"
+          formControlName="price"
+          placeholder="Nhập giá..."
+        />
+        @if (price?.invalid && price?.touched) {
+
+        <p style="color:red">Giá phải lớn hơn 0</p>
+
+        }
+      </div>
+
+      <div class="form-group">
+        <label>Lượt xem</label>
+        <input
+          type="number"
+          formControlName="views"
+          placeholder="Nhập lượt xem..."
+        />
+      </div>
+
+      <div class="button-group">
+        <button class="btn-save" type="submit" [disabled]="addForm.invalid" >
+          Thêm truyện
+        </button>
+
+        <button class="btn-reset" type="reset">
+          Làm mới
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>   
