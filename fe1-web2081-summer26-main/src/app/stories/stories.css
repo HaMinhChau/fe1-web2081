@@ -264,3 +264,33 @@
   }
 
 }
+
+.error-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:60vh;
+}
+
+.loading{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:60vh;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.error-message {
+  color: #e53935;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+
+  background: #fff5f5;
+  border: 2px solid #ffcdd2;
+  border-radius: 16px;
+  padding: 30px 60px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}

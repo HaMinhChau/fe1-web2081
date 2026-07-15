@@ -1,3 +1,76 @@
 {
-  "stories": []
+  "stories": [
+    {
+      "id": 1,
+      "title": "Dragon Ball",
+      "since": "1984",
+      "author": "Akira Toriyama",
+      "price": "50000",
+      "views": 1000000,
+      "imageUrl": "https://covers.openlibrary.org/b/isbn/9781569319208-L.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Attack On Titan",
+      "since": "2009",
+      "author": "Hajime Isayama",
+      "price": "85000",
+      "views": 900000,
+      "imageUrl": "https://covers.openlibrary.org/b/isbn/9781612620244-L.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Bleach",
+      "since": "2001",
+      "author": "Tite Kubo",
+      "price": "65000",
+      "views": 400000,
+      "imageUrl": "https://covers.openlibrary.org/b/isbn/9781591164418-L.jpg"
+    },
+    {
+      "id": 4,
+      "title": "One Piece",
+      "since": "1997",
+      "author": "Eiichiro Oda",
+      "price": "95000",
+      "views": 2500000,
+      "imageUrl": "https://covers.openlibrary.org/b/isbn/9781569319017-L.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Naruto",
+      "since": "1999",
+      "author": "Masashi Kishimoto",
+      "price": "70000",
+      "views": 1800000,
+      "imageUrl": "https://covers.openlibrary.org/b/isbn/9781569319000-L.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Demon Slayer",
+      "since": "2016",
+      "author": "Koyoharu Gotouge",
+      "price": "88000",
+      "views": 1300000,
+      "imageUrl": "https://covers.openlibrary.org/b/isbn/9781974700523-L.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Jujutsu Kaisen",
+      "since": "2018",
+      "author": "Gege Akutami",
+      "price": "90000",
+      "views": 950000,
+      "imageUrl": "https://covers.openlibrary.org/b/isbn/9781974710027-L.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Death Note",
+      "since": "2003",
+      "author": "Tsugumi Ohba",
+      "price": "60000",
+      "views": 1200000,
+      "imageUrl": "https://covers.openlibrary.org/b/isbn/9781421501680-L.jpg"
+    }
+  ]
 }

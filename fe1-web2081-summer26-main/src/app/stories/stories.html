@@ -3,10 +3,11 @@
   <div class="header-action">
     <h2 class="dashboard-title">Danh sách truyện tranh</h2>
     <div>
-      <button routerLink="/add-story" routerLinkActive="text-yellow-300 font-semibold">Thêm sản phẩm</button>
+      <button routerLink="/add-story">Thêm sản phẩm</button>
     </div>
   </div>
   <div class="table-wrapper">
+    
     <table class="anime-table">
       <thead>
         <tr>
@@ -17,10 +18,28 @@
           <th>Tác giả</th>
           <th>Giá</th>
           <th>Lượt xem</th>
+          <th>Hành động</th>
         </tr>
       </thead>
-
+      
       <tbody>
+        @if (loading) {
+        <tr>
+          <td colspan="7" class="loading-cell">Đang tải dữ liệu...</td>
+        </tr>
+        }
+
+        @else if (error) {
+          <tr>
+            <td colspan="7" class="error-cell">❌ Không thể tải dữ liệu!</td>
+          </tr>
+        }
+
+        @else {
+          @for (story of stories; track story.id; let i = $index) {
+            <tr><!-- dữ liệu --></tr>
+          }
+        }
         @for (story of stories; track story.title; let i = $index) {
           <tr>
             <td class="col-stt">{{ i + 1 }}</td>
@@ -44,6 +63,9 @@
             </td>
             <td>
               <span class="btn-views">Lượt xem</span>
+            </td>
+            <td>
+              <button (click)="deleteStory(story.id)" style="background-color: red; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 20%;">Xoá</button>
             </td>
           </tr>
         }
