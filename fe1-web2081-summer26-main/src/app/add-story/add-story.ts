@@ -1,6 +1,6 @@
+import { StoryService } from './../services/story';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-
 @Component({
   selector: 'app-add-story',
   imports: [ReactiveFormsModule],
@@ -10,8 +10,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class AddStory {
 
    addForm: FormGroup;
+   
+   loading = false;
+    success = "";
+    error = "";
 
-   constructor(private fb: FormBuilder) {
+   constructor(private fb: FormBuilder, private StoryService: StoryService) {
     this.addForm = this.fb.group({
       title: ["", [Validators.required, Validators.minLength(3)]],
       imageUrl: ["", Validators.required],
@@ -22,9 +26,41 @@ export class AddStory {
     });
 }
 
-submitForm(){
-  console.log(this.addForm.value);
-  
+
+
+submitForm() {
+
+  if (this.addForm.invalid) {
+    this.addForm.markAllAsTouched();
+    return;
+  }
+
+  this.loading = true;
+  this.success = "";
+  this.error = "";
+
+  this.StoryService.create(this.addForm.value).subscribe({
+
+    next: () => {
+
+      this.loading = false;
+      this.success = "Thêm truyện thành công";
+
+      this.addForm.reset({
+        views: 0
+      });
+
+    },
+
+    error: () => {
+
+      this.loading = false;
+      this.error = "Có lỗi xảy ra";
+
+    }
+
+  });
+
 }
 
 get title(){

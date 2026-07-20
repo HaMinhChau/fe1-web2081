@@ -11,10 +11,17 @@
           formControlName="title"
           placeholder="Nhập tên truyện..."
         />
-        @if (title?.invalid && title?.touched) {
 
-        <p style="color:red">Tên truyện phải ít nhất 3 ký tự</p>
+        @if (title?.touched && title?.errors?.['required']) {
+          <p style="color:red">
+            Tên truyện không được để trống
+          </p>
+        }
 
+        @if (title?.touched && title?.errors?.['minlength']) {
+          <p style="color:red">
+            Tên truyện phải ít nhất 3 ký tự
+          </p>
         }
       </div>
 
@@ -52,10 +59,16 @@
           formControlName="price"
           placeholder="Nhập giá..."
         />
-        @if (price?.invalid && price?.touched) {
+        @if (price?.touched && price?.errors?.['required']) {
+        <p style="color:red">
+          Giá không được để trống
+        </p>
+        }
 
-        <p style="color:red">Giá phải lớn hơn 0</p>
-
+        @if (price?.touched && price?.errors?.['min']) {
+          <p style="color:red">
+            Giá phải lớn hơn 0
+          </p>
         }
       </div>
 
@@ -69,8 +82,17 @@
       </div>
 
       <div class="button-group">
-        <button class="btn-save" type="submit" [disabled]="addForm.invalid" >
-          Thêm truyện
+        <button
+          class="btn-save"
+          type="submit"
+          [disabled]="loading || addForm.invalid">
+
+          @if(loading){
+            Đang gửi...
+          } @else {
+            Thêm truyện
+          }
+
         </button>
 
         <button class="btn-reset" type="reset">
@@ -79,5 +101,16 @@
       </div>
 
     </form>
+          @if(success){
+      <p style="color:green">
+        {{ success }}
+      </p>
+      }
+
+      @if(error){
+      <p style="color:red">
+        {{ error }}
+      </p>
+      }
   </div>
 </div>   
